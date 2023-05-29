@@ -7,6 +7,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = current_user.groups.includes(:payments).find(params[:id])
+    @group_payments = @group.payments.order(created_at: :desc)
   end
 
   def new
