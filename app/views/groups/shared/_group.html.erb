@@ -1,0 +1,6 @@
+<article>
+  <p><%= group.icon %></p>
+  <h3><%= group.name %></h3>
+  <p><%= link_to 'Edit', edit_group_path(group) %></p>
+  <p><%= link_to 'Destroy', group, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %></p>
+</article>
