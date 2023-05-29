@@ -2,14 +2,20 @@ class PaymentsController < ApplicationController
   before_action :authenticate_user!
 
   def new
-    @payment = current_user.payments.new(group_id: params[:group_id])
+    @payment = current_user.payments.new
+    @group = Group.find(params[:group_id])
   end
 
   def create
-    @payment = current_user.payments.new(payment_params.merge(group_id: params[:group_id]))
+    @payment = current_user.payments.new(payment_params.except(:groups))
+    @group = Group.find(params[:group_id])
+
+    payment_params[:groups].each do |k, v|
+      @payment.groups << Group.find(k) if v == '1'
+    end
 
     if @payment.save
-      redirect_to group_path(@payment.group), notice: 'Payment was successfully created.'
+      redirect_to group_path(@group), notice: 'Payment was successfully created.'
     else
       render :new, alert: 'Payment was not created.'
     end
@@ -17,6 +23,7 @@ class PaymentsController < ApplicationController
 
   def edit
     @payment = Payment.find(params[:id])
+    @group = Group.find(params[:group_id])
   end
 
   def update
@@ -31,6 +38,6 @@ class PaymentsController < ApplicationController
   private
 
   def payment_params
-    params.require(:payment).permit(:name, :amount, :author_id, :group_id)
+    params.require(:payment).permit(:name, :amount, :author_id, :groups => {})
   end
 end

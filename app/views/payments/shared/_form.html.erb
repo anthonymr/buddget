@@ -1,4 +1,4 @@
-<%= form_with model: [payment.group, payment] do |form| %>
+<%= form_with model: [group, payment] do |form| %>
   <div class="field">
     <%= form.label :amount %>
     <%= form.text_field :amount %>
@@ -7,6 +7,13 @@
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
+
+  <% current_user.groups.each do |group| %>
+    <%= form.label group.name  %>
+    <%= form.check_box "groups[#{group.id}]"  %>
+  <% end %>
+
+
   <div class="actions">
     <%= form.submit %>
   </div>

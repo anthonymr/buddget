@@ -1,10 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  
-  resources :users do
-    resources :groups
-  end
-
   resources :groups do
     resources :payments
   end

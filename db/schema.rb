@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_29_145205) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_29_155150) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -51,15 +51,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_29_145205) do
     t.index ["name"], name: "index_groups_on_name", unique: true
   end
 
+  create_table "groups_payments", force: :cascade do |t|
+    t.bigint "group_id", null: false
+    t.bigint "payment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_groups_payments_on_group_id"
+    t.index ["payment_id"], name: "index_groups_payments_on_payment_id"
+  end
+
   create_table "payments", force: :cascade do |t|
     t.bigint "author_id", null: false
     t.string "name", limit: 50, null: false
     t.decimal "amount", precision: 10, scale: 2, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "group_id", null: false
     t.index ["author_id"], name: "index_payments_on_author_id"
-    t.index ["group_id"], name: "index_payments_on_group_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -82,6 +89,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_29_145205) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "groups", "users", column: "author_id"
-  add_foreign_key "payments", "groups"
+  add_foreign_key "groups_payments", "groups"
+  add_foreign_key "groups_payments", "payments"
   add_foreign_key "payments", "users", column: "author_id"
 end
