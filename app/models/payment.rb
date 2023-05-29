@@ -4,4 +4,5 @@ class Payment < ApplicationRecord
 
   validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :author_id, presence: true
+  validates :groups, presence: true, length: { minimum: 1 }
 end
