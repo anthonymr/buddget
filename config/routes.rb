@@ -4,5 +4,7 @@ Rails.application.routes.draw do
     resources :payments
   end
 
+  get '/welcome', to: 'welcome#index'
+
   root 'groups#index'
 end
