@@ -38,6 +38,6 @@ class PaymentsController < ApplicationController
   private
 
   def payment_params
-    params.require(:payment).permit(:name, :amount, :author_id, :groups => {})
+    params.require(:payment).permit(:name, :amount, :author_id, groups: {})
   end
 end
