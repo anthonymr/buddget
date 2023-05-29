@@ -1,6 +1,7 @@
 <article>
   <p><%= group.icon %></p>
   <h3><%= group.name %></h3>
+  <p><%= group.total_amount %></p>
   <% unless local_assigns[:no_links] && no_links %>
     <p><%= link_to 'Show', group %></p>
     <p><%= link_to 'Edit', edit_group_path(group) %></p>
