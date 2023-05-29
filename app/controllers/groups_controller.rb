@@ -20,7 +20,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to groups_path, notice: 'Group was successfully created.'
     else
-      render :new, alert: 'Group was not created.'
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -32,7 +32,7 @@ class GroupsController < ApplicationController
     if current_group.update(group_params)
       redirect_to groups_path, notice: 'Group was successfully updated.'
     else
-      render :edit, alert: 'Group was not updated.'
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -40,7 +40,7 @@ class GroupsController < ApplicationController
     if current_group.destroy
       redirect_to groups_path, notice: 'Group was successfully destroyed.'
     else
-      redirect_to groups_path, alert: 'Group was not destroyed.'
+      redirect_to groups_path, status: :unprocessable_entity
     end
   end
 

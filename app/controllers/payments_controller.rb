@@ -17,7 +17,7 @@ class PaymentsController < ApplicationController
     if @payment.save
       redirect_to group_path(@group), notice: 'Payment was successfully created.'
     else
-      render :new, alert: 'Payment was not created.'
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -31,7 +31,7 @@ class PaymentsController < ApplicationController
     if @payment.update(payment_params)
       redirect_to group_path(@payment.group), notice: 'Payment was successfully updated.'
     else
-      render :edit, alert: 'Payment was not updated.'
+      render :edit, status: :unprocessable_entity
     end
   end
 
