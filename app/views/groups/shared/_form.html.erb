@@ -1,4 +1,8 @@
 <%= form_with model: group do |form| %>
+  <% group.errors.full_messages.each do |error| %>
+    <div><%= error %></div>
+  <% end %>
+
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
