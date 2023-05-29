@@ -1,6 +1,6 @@
 class Payment < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
-  belongs_to :group
+  has_many :groups, through: :group_payments
 
   validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :author_id, presence: true
