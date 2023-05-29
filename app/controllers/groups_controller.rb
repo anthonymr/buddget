@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group = current_user.groups.includes(:payments).find(params[:id])
+    @group = current_user.groups.with_attached_icon.includes(:payments).find(params[:id])
     @group_payments = @group.payments.order(created_at: :desc)
   end
 
@@ -51,6 +51,6 @@ class GroupsController < ApplicationController
   end
 
   def current_group
-    current_user.groups.find(params[:id])
+    current_user.groups.with_attached_icon.find(params[:id])
   end
 end
