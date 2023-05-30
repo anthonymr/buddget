@@ -7,6 +7,10 @@ header img {
   height: 20px;
 }
 
+header a {
+  color: var(--light-color);
+}
+
 header .title {
   display: flex;
 }

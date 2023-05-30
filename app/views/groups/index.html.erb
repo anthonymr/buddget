@@ -1,5 +1,13 @@
-<h2>Categories</h2>
+<header>
+  <div class="title">
+    <div></div>
+    <div><h2>Categories</h2></div>
+    <div><%= link_to 'New', new_group_path %></div>
+  </div>
 
-<%= link_to 'Add new category', new_group_path %>
+  <%= render partial: 'shared/nav' %>
+</header>
 
-<%= render partial: 'groups/shared/group', collection: @groups %>
+<div class="container">
+  <%= render partial: 'groups/shared/group', collection: @groups %>
+</div>

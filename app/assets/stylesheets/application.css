@@ -50,3 +50,8 @@ body {
 a {
   text-decoration: none;
 }
+
+.container {
+  background-color: var(--light-color);
+  padding: 20px;
+}
