@@ -1,0 +1,50 @@
+form {
+  background-color: var(--light-color);
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+  width: 100%;
+  line-height: 40px;
+  border: none;
+  border-radius: none;
+  border-bottom: 1px solid var(--border-color);
+}
+
+form input[type="text"]::placeholder,
+form input[type="password"]::placeholder,
+form input[type="email"]::placeholder {
+  color: var(--border-color);
+  text-transform: capitalize;
+  font-size: 12px;
+}
+
+form .form-body {
+  margin-top: 20px;
+  background-color: white;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-left: 10px;
+}
+
+form label {
+  line-height: 40px;
+  color: var(--text-color-3);
+  text-transform: capitalize;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.form-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-links > a {
+  font-size: 12px;
+  color: var(--text-color-3);
+  margin-top: 15px;
+}

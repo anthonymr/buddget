@@ -1,0 +1,48 @@
+.notification {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 20px);
+  height: 300px;
+  margin: 10px;
+  background-color: var(--light-color);
+  color: var(--text-color-3);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  opacity: 1;
+  visibility: visible;
+  transition: all .5s ease-in-out;
+}
+
+.notification .circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notification.alert .circle {
+  background-color: var(--error-color);
+}
+
+.notification.notice .circle {
+  background-color: var(--secondary-color);
+}
+
+.notification .circle img {
+  width: 70%;
+  height: 70%;
+}
+
+.fade {
+  height: 0px;
+  opacity: 0;
+  visibility: hidden;
+}

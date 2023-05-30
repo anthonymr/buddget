@@ -7,15 +7,21 @@
     <%= form.label :amount %>
     <%= form.text_field :amount %>
   </div>
+
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
-  <% current_user.groups.each do |group| %>
+  <!--<% current_user.groups.each do |group| %>
     <%= form.label group.name  %>
     <%= form.check_box "groups[#{group.id}]"  %>
-  <% end %>
+  <% end %>-->
+
+  <%= form.select(:groups, current_user.groups.collect {|g| [g.name, g.id]},
+      { include_blank: false }, { multiple: true }) %>
+
+      
 
   <div class="actions">
     <%= form.submit %>

@@ -1,2 +1,16 @@
-<p class="notice"><%= notice %></p> 
-<p class="alert"><%= alert %></p> 
+<% if notice %>
+  <div class="notification notice">
+    <div class="circle">
+      <%= image_tag 'check.svg' %>
+    </div>
+    <%= notice %>
+  </div>
+<% end %>
+<% if alert %>
+  <div class="notification alert">
+    <div class="circle">
+      <%= image_tag 'times.svg' %>
+    </div>
+    <%= alert %>
+  </div>
+<% end %>
