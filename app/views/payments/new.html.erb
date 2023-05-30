@@ -1,5 +1,9 @@
-<h2>Add new payment</h2>
+<%= render partial: 'payments/shared/form',
+           locals: { 
+            payment: @payment, 
+            group: @group, 
+            back: group_path(@group), 
+            title: 'New payment' 
+            } 
+%>
 
-<%= render partial: 'payments/shared/form', locals: { payment: @payment, group: @group } %>
-
-<%= link_to 'Back', group_path(@group) %>

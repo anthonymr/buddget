@@ -11,12 +11,8 @@ class PaymentsController < ApplicationController
     pp payment_params[:type]
     @group = Group.find(params[:group_id])
 
-    # payment_params[:groups].each do |k, v|
-    #   @payment.groups << Group.find(k) if v == '1'
-    # end
-
-    payment_params[:groups].each do |v|
-      @payment.groups << Group.find(v) if v.present?
+    payment_params[:groups].each do |k, v|
+      @payment.groups << Group.find(k) if v == '1'
     end
 
     if @payment.save
@@ -43,7 +39,6 @@ class PaymentsController < ApplicationController
   private
 
   def payment_params
-    # params.require(:payment).permit(:name, :amount, :author_id, groups: {})
-    params.require(:payment).permit(:name, :amount, :author_id, groups: [])
+    params.require(:payment).permit(:name, :amount, :author_id, groups: {})
   end
 end

@@ -1,0 +1,8 @@
+  <div id="error_explanation">
+    <h2><%= message %>:</h2>
+    <ul>
+      <% entity.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>

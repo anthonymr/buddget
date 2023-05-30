@@ -1,17 +1,24 @@
 <%= form_with model: group do |form| %>
-  <% group.errors.full_messages.each do |error| %>
-    <div><%= error %></div>
-  <% end %>
+  <header>
+    <div class="title">
+      <div>
+        <%= link_to back do %>
+          <%= image_tag 'back.svg' %>
+        <% end %>
+      </div>
+      <div><h2><%= title %></h2></div>
+      <div><%= form.submit "Create" %></div>
+    </div>
+  </header>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-  <div class="field">
-    <%= form.label :icon %>
-    <%= form.file_field :icon %>
-  </div>
-  <div class="actions">
-    <%= form.submit %>
+  <%= render partial: 'shared/form_errors', locals: { message: 'Invalid category', entity: group } if group.errors.any? %>
+
+  <div class="form-body">
+    <div class="field">
+      <%= form.text_field :name, placeholder: 'Name' %>
+    </div>
+    <div class="field">
+      <%= form.file_field :icon %>
+    </div>
   </div>
 <% end %>

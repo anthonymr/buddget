@@ -63,3 +63,30 @@ form label {
   padding: 0;
   margin: 0 0 0 30px;
 }
+
+input[type="file"] {
+  color: var(--text-color-3);
+  margin: 4px 0;
+}
+
+input[type="file"]::file-selector-button {
+  border: none;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 3px;
+  color: var(--light-color);
+  background-color: var(--secondary-color);
+}
+
+.file-label {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.check-boxes-field {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
