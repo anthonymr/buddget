@@ -2,18 +2,15 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-console.log('pasando')
+// window.addEventListener("turbo:load", () => {
+//   hideNotice();
+// });
 
-window.addEventListener("turbo:load", () => {
-  hideNotice();
-});
-
-function hideNotice() {
-  console.log('pasando')
-  const notification = document.querySelector('.notification')
-  if (notification) {
-    setInterval(function() {
-      notification.classList.add('fade');
-    }, 2000);
-  }
-}
+// function hideNotice() {
+//   const notification = document.querySelector('.notification')
+//   if (notification) {
+//     setInterval(function() {
+//       notification.classList.add('fade');
+//     }, 2000);
+//   }
+// }
