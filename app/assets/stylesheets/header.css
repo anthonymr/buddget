@@ -1,6 +1,6 @@
 header {
   background-color: var(--primary-color);
-  background: var(--gradient);
+  background-image: var(--gradient);
 }
 
 header img {
@@ -32,7 +32,7 @@ header .title > div:last-child {
   justify-content: flex-end;
 }
 
-header .title >div:nth-child(2) {
+header .title > div:nth-child(2) {
   flex-grow: 1;
   display: flex;
   justify-content: center;

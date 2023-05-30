@@ -8,7 +8,7 @@ form input[type="email"] {
   width: 100%;
   line-height: 40px;
   border: none;
-  border-radius: none;
+  border-radius: 0;
   border-bottom: 1px solid var(--border-color);
 }
 

@@ -24,7 +24,7 @@
   --text-color-1: #545c67;
   --text-color-2: #86898e;
   --text-color-3: #989da3;
-  --border-color: #dddddd;
+  --border-color: #ddd;
   --light-color: #f5f5f5;
   --gradient: linear-gradient(180deg, #3778c2 0%, #2c609a 100%);
 }
@@ -42,8 +42,8 @@ body {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
