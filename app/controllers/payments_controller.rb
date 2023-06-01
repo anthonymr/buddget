@@ -8,7 +8,6 @@ class PaymentsController < ApplicationController
 
   def create
     @payment = current_user.payments.new(payment_params.except(:groups))
-    pp payment_params[:type]
     @group = Group.find(params[:group_id])
 
     payment_params[:groups].each do |k, v|

@@ -2,7 +2,7 @@
   <div class="title">
     <div></div>
     <div><h2>Categories</h2></div>
-    <div><%= link_to 'New', new_group_path %></div>
+    <div></div>
   </div>
 
   <%= render partial: 'shared/nav' %>
@@ -10,4 +10,7 @@
 
 <div class="container">
   <%= render partial: 'groups/shared/group', collection: @groups %>
+  <%= link_to new_group_path, class: 'new-catergory-button' do %>
+    <div>New</div>
+  <% end %>
 </div>
