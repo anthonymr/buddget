@@ -1,0 +1,8 @@
+<%= link_to group do %>
+  <article class="group">
+    <div class="image"><%= image_tag group.icon, style:'width:50px' %></div>
+    <div class="name">
+      <h3><%= group.name %></h3></div>
+    <div class="total">$<%= '%.2f' % group.total_amount %></div>
+  </article>
+<% end %>

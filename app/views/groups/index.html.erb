@@ -1,0 +1,16 @@
+<header>
+  <div class="title">
+    <div></div>
+    <div><h2>Categories</h2></div>
+    <div></div>
+  </div>
+
+  <%= render partial: 'shared/nav' %>
+</header>
+
+<div class="container">
+  <%= render partial: 'groups/shared/group', collection: @groups %>
+  <%= link_to new_group_path, class: 'new-catergory-button' do %>
+    <div>New</div>
+  <% end %>
+</div>

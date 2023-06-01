@@ -1,0 +1,19 @@
+<header>
+  <div class="title">
+    <div>
+      <%= link_to groups_path do %>
+        <%= image_tag 'back.svg' %>
+      <% end %>
+    </div>
+    <div><h2><%= @group.name %></h2></div>
+    <div><%= link_to 'Add payment', new_group_payment_path(@group) %></div>
+  </div>
+
+  <%= render partial: 'shared/nav' %>
+</header>
+
+<div class="container">
+  <%= render partial: 'groups/shared/group', locals: { group: @group, no_links: true } %>
+
+  <%= render partial: 'payments/shared/payment', collection: @group_payments %>
+</div>

@@ -1,0 +1,92 @@
+form {
+  background-color: var(--light-color);
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+  width: 100%;
+  line-height: 40px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+form input[type="text"]::placeholder,
+form input[type="password"]::placeholder,
+form input[type="email"]::placeholder {
+  color: var(--border-color);
+  text-transform: capitalize;
+  font-size: 12px;
+}
+
+form .form-body {
+  margin-top: 20px;
+  background-color: white;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-left: 10px;
+}
+
+form label {
+  line-height: 40px;
+  color: var(--text-color-3);
+  text-transform: capitalize;
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.form-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-links > a {
+  font-size: 12px;
+  color: var(--text-color-3);
+  margin-top: 15px;
+}
+
+#error_explanation > h2 {
+  color: var(--error-color);
+  font-size: 12px;
+  padding: 10px;
+  margin: 0;
+}
+
+#error_explanation > ul {
+  list-style: none;
+  color: var(--error-color);
+  font-size: 12px;
+  padding: 0;
+  margin: 0 0 0 30px;
+}
+
+input[type="file"] {
+  color: var(--text-color-3);
+  margin: 4px 0;
+}
+
+input[type="file"]::file-selector-button {
+  border: none;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: 3px;
+  color: var(--light-color);
+  background-color: var(--secondary-color);
+}
+
+.file-label {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.check-boxes-field {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

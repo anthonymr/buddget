@@ -1,0 +1,60 @@
+header {
+  background-color: var(--primary-color);
+  background-image: var(--gradient);
+}
+
+header img {
+  height: 20px;
+}
+
+header a {
+  color: var(--light-color);
+}
+
+header .title {
+  display: flex;
+}
+
+header .title > div:first-child,
+header .title > div:last-child {
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+header .title > div:first-child {
+  padding-left: 5px;
+  justify-content: flex-start;
+}
+
+header .title > div:last-child {
+  padding-right: 5px;
+  justify-content: flex-end;
+}
+
+header .title > div:nth-child(2) {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+header h2 {
+  color: var(--light-color);
+  padding: 0;
+  margin: 0;
+  font-weight: 300;
+  line-height: 50px;
+}
+
+header input[type="submit"],
+header input[type="reset"],
+header input[type="button"],
+header button {
+  background-color: transparent;
+  border: none;
+  color: var(--light-color);
+  font-weight: 300;
+}
