@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :groups, foreign_key: 'author_id', dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 50 }
+  validates :email, presence: true
+  validates :password, presence: true
 
   def admin?
     role == 'admin'
